@@ -1,6 +1,16 @@
 version: '3'
 
 services:
+
+  myapp:
+    build: .
+    container_name: myapp
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/usr/share/nginx/html
+
   mysql:
     image: mysql:8
     container_name: mysql
